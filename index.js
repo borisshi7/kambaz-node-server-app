@@ -11,6 +11,8 @@ import AssignmentsRoutes from "./kambaz/assignments/routes.js";
 import EnrollmentsRoutes from "./kambaz/enrollments/routes.js";
 import "dotenv/config";
 import session from "express-session";
+import QuizRoutes from "./kambaz/quizzes/routes.js";
+import AttemptsRoutes from "./kambaz/attempts/routes.js";
 
 const app = express();
 const CONNECTION_STRING =
@@ -46,6 +48,8 @@ UserRoutes(app, db);
 CourseRoutes(app, db);
 ModulesRoutes(app, db);
 AssignmentsRoutes(app, db);
+QuizRoutes(app);
+AttemptsRoutes(app);
 Hello(app);
 Lab5(app);
 app.listen(process.env.PORT || 4001);
